@@ -124,14 +124,23 @@ body {
 }
 .board h2 { font-family: "Oswald", sans-serif; letter-spacing: 0.04em; margin: 0.4rem 0; }
 
-.svc-grid {
-  columns: 2;
-  gap: 1.2rem;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.86rem;
+.bay-list {
+  list-style: none;
+  margin: 0.5rem 0 1rem;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
 }
-.svc-grid ul { margin: 0 0 0.8rem; padding-left: 1.1rem; }
-.svc-grid b { font-family: "Source Sans 3", sans-serif; }
+.bay-list li {
+  background: var(--ticket);
+  border: 2px solid #1c1a16;
+  padding: 0.28rem 0.55rem;
+}
 
 .wo {
   background: var(--ticket);
@@ -156,7 +165,6 @@ a.plain { color: inherit; }
 
 @media (max-width: 800px) {
   .bays { grid-template-columns: 1fr; }
-  .svc-grid { columns: 1; }
 }
 @media print {
   .street-top, .lang, .wo button { display: none !important; }

@@ -21,4 +21,4 @@ http.createServer((req, res) => {
     res.writeHead(200, { "Content-Type": types[path.extname(p)] || "application/octet-stream" });
     res.end(data);
   });
-}).listen(port, () => console.log(""A" Street Auto static http://localhost:" + port));
+}).listen(port, () => console.log("A Street Auto static http://localhost:" + port));

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Review card — “A” Street Auto Service</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .card { max-width: 480px; margin: 1.2rem auto; background: #f7f4ea; border: 6px solid #1f6b3a; padding: 1.2rem; }
+    .card img { width: 220px; height: 220px; display: block; margin: 0.7rem auto; }
+    .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .actions button, .actions a { background: #2b2a27; color: #e7d24a; border: 0; padding: 0.5rem 0.7rem; text-decoration: none; font-family: "Oswald", sans-serif; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+    .fine { font-size: 0.85rem; color: #4a463c; }
+    @media print { .street-top, .actions, .lang { display: none !important; } body { background: #fff; } }
+  </style>
+</head>
+<body>
+  <header class="street-top">
+    <span>“A” Street Auto Service</span>
+    <nav class="lang" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">EN</button>
+      <button type="button" data-set="es" aria-pressed="false">ES</button>
+    </nav>
+  </header>
+  <article class="card">
+    <h1 class="shop-name" style="font-size:1.8rem;">“A” Street Auto Service</h1>
+    <p>1263 State Street, San Diego, CA 92101 · (619) 239-8600</p>
+    <img src="review-qr.svg" width="220" height="220" alt="QR code: Google search for A Street Auto Service at 1263 State Street">
+    <p data-en="astreetautoservice.com does not publish a working Google or Yelp review URL. Their homepage Yelp block is empty Wix slides (“Slide title / Write your caption here / Button”). Those are omitted here — not used as reviews." data-es="astreetautoservice.com no publica una URL funcional de reseñas de Google o Yelp. El bloque de Yelp en su inicio son diapositivas vacías de Wix (“Slide title / Write your caption here / Button”). Se omiten — no se usan como reseñas.">astreetautoservice.com does not publish a working Google or Yelp review URL. Their homepage Yelp block is empty Wix slides (“Slide title / Write your caption here / Button”). Those are omitted here — not used as reviews.</p>
+    <p class="fine" data-en="This QR opens a Google search for the shop name plus 1263 State Street. No invented listing URL." data-es="Este QR abre una búsqueda de Google del nombre del taller más 1263 State Street. Sin URL de ficha inventada.">This QR opens a Google search for the shop name plus 1263 State Street. No invented listing URL.</p>
+    <div class="actions">
+      <button type="button" id="print-card" data-en="Print this card" data-es="Imprimir esta tarjeta">Print this card</button>
+      <a href="index.html" data-en="Back to the bay" data-es="Volver a la bahía">Back to the bay</a>
+    </div>
+  </article>
+  <script src="script.js"></script>
+</body>
+</html>

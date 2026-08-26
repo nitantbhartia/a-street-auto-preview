@@ -1,166 +1,221 @@
-/* "A" Street Auto — State Street curb bay. Smog ticket + ASE service. Not a sun page. */
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Oswald:wght@500;600&family=Source+Sans+3:wght@400;600;700&display=swap");
+/* "A" Street Auto — State Street curb + open bay. */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Overpass+Mono:wght@400;600&family=Overpass:wght@400;600;700&display=swap");
 
 :root {
-  --asphalt: #2b2a27;
-  --curb: #e7d24a;
-  --bay: #cfc7b4;
-  --smog: #1f6b3a;
-  --ase: #1b3f73;
-  --ticket: #f7f4ea;
-  --ink: #1c1a16;
+  --asphalt: #2a2824;
+  --curb: #efd445;
+  --bay: #cfc6af;
+  --smog: #1c6a38;
+  --ase: #1a3d72;
+  --ticket: #f6f2e4;
+  --ink: #1b1914;
 }
 
 * { box-sizing: border-box; }
 body {
   margin: 0;
-  background: var(--asphalt);
+  background:
+    radial-gradient(ellipse at 20% 80%, #0004 0 80px, transparent 140px),
+    repeating-linear-gradient(90deg, #2a2824 0 38px, #262420 38px 40px);
   color: var(--ink);
-  font-family: "Source Sans 3", "Segoe UI", sans-serif;
+  font-family: "Overpass", "Segoe UI", sans-serif;
 }
 
 .street-top {
   display: flex; justify-content: space-between; align-items: center;
-  padding: 0.4rem 0.8rem; color: #eee8d6; font-size: 0.85rem;
+  padding: 0.35rem 0.8rem; color: #eee8d6; font-size: 0.82rem;
+  font-family: "Overpass Mono", ui-monospace, monospace;
 }
-.lang button { background: transparent; color: #eee8d6; border: 1px solid #eee8d655; padding: 0.15rem 0.45rem; cursor: pointer; }
+.lang button {
+  background: transparent; color: #eee8d6; border: 1px solid #eee8d655;
+  padding: 0.12rem 0.4rem; cursor: pointer; font-family: inherit;
+}
 .lang button[aria-pressed="true"] { background: var(--curb); color: var(--asphalt); border-color: var(--curb); }
 
+.apron { max-width: 980px; margin: 0 auto; }
+
 .curb {
-  background: var(--curb);
+  background:
+    linear-gradient(#fff6 0, transparent 18%),
+    linear-gradient(180deg, #f6e56a 0%, var(--curb) 55%, #c9b132 100%);
   color: var(--asphalt);
   font-family: "Oswald", "Arial Narrow", sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-weight: 700;
   text-transform: uppercase;
-  font-size: clamp(1.4rem, 6vw, 3rem);
-  padding: 0.35rem 1rem 0.2rem;
-  border-top: 6px solid #f3e48a;
-  border-bottom: 10px solid #c9b53a;
   text-align: center;
+  padding: 0.55rem 1rem 0.7rem;
+  border-top: 8px solid #f8e98a;
+  box-shadow: 0 14px 0 #a89428, 0 18px 0 #1b1914;
+  margin: 0.35rem 0 1.15rem;
+  letter-spacing: 0.08em;
+}
+.curb .num {
+  display: block;
+  font-size: clamp(3.2rem, 14vw, 6.4rem);
+  line-height: 0.82;
+  letter-spacing: 0.06em;
+}
+.curb .st {
+  display: block;
+  font-size: clamp(1.3rem, 5vw, 2.2rem);
+  letter-spacing: 0.28em;
 }
 .curb small {
   display: block;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  letter-spacing: 0.08em;
+  font-family: "Overpass Mono", ui-monospace, monospace;
+  letter-spacing: 0.06em;
   font-size: 0.72rem;
-  font-weight: 500;
+  font-weight: 400;
+  margin-top: 0.2rem;
+  text-transform: none;
 }
 
 .bays {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 8px;
-  padding: 8px;
-  background: #1f1e1c;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 10px;
+  padding: 0 8px;
 }
 .bay {
   background: var(--bay);
-  min-height: 280px;
-  padding: 1rem 1.1rem 1.3rem;
+  padding: 1rem 1.05rem 1.4rem;
   position: relative;
+  min-height: 280px;
+  box-shadow: inset 0 0 0 1px #0002;
 }
-.bay::before {
-  content: "";
-  position: absolute; left: 8%; right: 8%; bottom: 12px; height: 8px;
-  background: repeating-linear-gradient(90deg, #fff 0 18px, #2b2a27 18px 36px);
-  opacity: 0.55;
+.tracks {
+  position: absolute; left: 10%; right: 10%; bottom: 14px; height: 10px;
+  background: repeating-linear-gradient(90deg, #fff 0 16px, #2a2824 16px 32px);
+  opacity: 0.5;
 }
 .window {
-  background: #e7efe6;
-  border: 10px solid #3a3a36;
-  padding: 0.9rem;
-  box-shadow: inset 0 0 0 3px var(--smog);
+  background: #d8ead8;
+  border: 12px solid #35332e;
+  padding: 0.7rem;
+  box-shadow: inset 0 0 0 4px var(--smog), 0 8px 0 #1b1914;
 }
 
 .ase {
-  width: 92px; height: 92px; border-radius: 50%;
+  width: 86px; height: 86px; border-radius: 50%;
   background: var(--ase); color: #fff;
   display: grid; place-items: center;
   font-family: "Oswald", sans-serif;
   letter-spacing: 0.08em;
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   float: right;
-  margin: 0 0 0.6rem 0.6rem;
+  margin: 0 0 0.5rem 0.5rem;
   border: 6px solid #c9a227;
   box-shadow: 0 4px 0 #1a1a16;
 }
 .shop-name {
   font-family: "Oswald", sans-serif;
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
   letter-spacing: 0.02em;
   line-height: 1;
-  margin: 0 0 0.3rem;
+  margin: 0 0 0.2rem;
 }
-.lede { margin: 0 0 0.7rem; max-width: 60ch; }
-
-.why { margin: 0.6rem 0 1rem; padding-left: 1.1rem; }
-.why li { margin: 0.2rem 0; }
+.kicker, .lede { margin: 0 0 0.45rem; }
+h2 { font-family: "Oswald", sans-serif; font-size: 1.15rem; letter-spacing: 0.03em; margin: 0.4rem 0 0.3rem; }
+.why { margin: 0.4rem 0 0.7rem; padding-left: 1.05rem; }
+.why li { margin: 0.12rem 0; }
+.contact {
+  font-family: "Overpass Mono", ui-monospace, monospace;
+  font-size: 0.86rem;
+  display: grid;
+  gap: 0.15rem;
+}
 
 .smog-ticket {
   background: var(--ticket);
-  border: 1px dashed #1f6b3a;
-  padding: 0.7rem 0.75rem;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.84rem;
+  border: 2px dashed var(--smog);
+  padding: 0.6rem 0.65rem;
+  font-family: "Overpass Mono", ui-monospace, monospace;
+  font-size: 0.8rem;
 }
 .smog-ticket h2 {
   font-family: "Oswald", sans-serif;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin: 0 0 0.4rem;
+  margin: 0 0 0.3rem;
   color: var(--smog);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
 }
-.smog-ticket ul { margin: 0; padding-left: 1.1rem; }
-
-.board {
-  max-width: 1100px;
-  margin: 0 auto;
-  background: #d8d0bb;
-  padding: 1rem 1.1rem 2rem;
-}
-.board h2 { font-family: "Oswald", sans-serif; letter-spacing: 0.04em; margin: 0.4rem 0; }
+.smog-ticket ul { margin: 0; padding-left: 1rem; }
+.hours { margin: 0.6rem 0 0; }
 
 .bay-list {
   list-style: none;
-  margin: 0.5rem 0 1rem;
+  margin: 1rem 8px 0.8rem;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.35rem;
   font-family: "Oswald", sans-serif;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.92rem;
+  font-size: 0.86rem;
 }
 .bay-list li {
-  background: var(--ticket);
-  border: 2px solid #1c1a16;
-  padding: 0.28rem 0.55rem;
+  background: transparent;
+  color: var(--curb);
+  border: 2px solid var(--curb);
+  padding: 0.22rem 0.5rem;
 }
 
 .wo {
+  margin: 0 8px 0.6rem;
   background: var(--ticket);
-  border: 2px solid #1c1a16;
-  padding: 0.85rem;
-  margin-top: 1rem;
+  border: 3px solid #1b1914;
+  padding: 0;
   display: grid;
-  gap: 0.35rem;
+  gap: 0;
+  box-shadow: 8px 10px 0 #111;
+  font-family: "Overpass Mono", ui-monospace, monospace;
 }
-.wo h2 { margin: 0 0 0.3rem; }
-.wo label { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; }
-.wo input, .wo textarea { border: 0; border-bottom: 1px solid #1c1a16; background: transparent; font: inherit; padding: 0.3rem 0; }
-.wo textarea { min-height: 3.4rem; }
+.wo-head {
+  background: #1b1914;
+  color: var(--curb);
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+.wo-no { border: 1px solid var(--curb); padding: 0 0.35rem; }
+.wo label, .wo input, .wo textarea, .wo .hint, .wo button {
+  margin-left: 0.7rem; margin-right: 0.7rem;
+}
+.wo label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.45rem;
+  background: #e4f0dc;
+  padding: 0.15rem 0.3rem;
+}
+.wo input, .wo textarea {
+  border: 0;
+  border-bottom: 2px dotted #1b1914;
+  background: repeating-linear-gradient(#f6f2e4, #f6f2e4 21px, #d7e8d0 21px 22px);
+  font: inherit;
+  padding: 0.28rem 0.2rem;
+}
+.wo textarea { min-height: 3.2rem; }
 .wo button {
-  background: var(--asphalt); color: var(--curb); border: 0; padding: 0.6rem 0.7rem;
-  font-family: "Oswald", sans-serif; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+  background: var(--curb);
+  color: var(--asphalt);
+  border: 0;
+  padding: 0.55rem 0.65rem;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin: 0.55rem 0.7rem 0.2rem;
 }
-.hint { font-size: 0.82rem; color: #4a463c; margin: 0; }
-.contact { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.9rem; }
-.foot { color: #bdb6a4; font-size: 0.8rem; text-align: center; padding: 0.8rem; }
+.hint { font-size: 0.76rem; color: #4a463c; margin: 0 0.7rem 0.7rem; }
+.review-link { margin: 0.4rem 8px 0.8rem; }
+.foot { color: #bdb6a4; font-size: 0.78rem; text-align: center; padding: 0.7rem; }
 a.plain { color: inherit; }
 
 @media (max-width: 800px) {

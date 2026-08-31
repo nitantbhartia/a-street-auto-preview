@@ -9,7 +9,8 @@
     .card { max-width: 480px; margin: 1.2rem auto; background: #f7f4ea; border: 6px solid #1f6b3a; padding: 1.2rem; }
     .card img { width: 220px; height: 220px; display: block; margin: 0.7rem auto; }
     .actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .actions button, .actions a { background: #2b2a27; color: #e7d24a; border: 0; padding: 0.5rem 0.7rem; text-decoration: none; font-family: "Oswald", sans-serif; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+    .actions button, .actions a { background: #2b2a27; color: #e7d24a; border: 0; padding: 0.5rem 0.7rem; text-decoration: none; font-family: "Alfa Slab One", serif; letter-spacing: .04em; cursor: pointer; }
+    .street-top { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0.8rem; color: #eee8d6; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.78rem; }
     @media print { .street-top, .actions, .lang { display: none !important; } body { background: #fff; } }
   </style>
 </head>
@@ -22,14 +23,14 @@
     </nav>
   </header>
   <article class="card">
-    <h1 class="shop-name" style="font-size:1.8rem;">“A” Street Auto Service</h1>
+    <h1 style="font-size:1.5rem;margin:0;">“A” Street Auto Service</h1>
     <p>1263 State Street, San Diego, CA 92101</p>
     <p><a class="plain" href="tel:+16192398600">(619) 239-8600</a></p>
-    <img src="review-qr.svg" width="220" height="220" alt="QR code to find “A” Street Auto Service on Google">
-    <p data-en="Scan to find us on Google and leave a review." data-es="Escanee para encontrarnos en Google y dejar una reseña.">Scan to find us on Google and leave a review.</p>
+    <img src="review-qr.svg" width="220" height="220" alt="QR code to “A” Street Auto Service on Yelp">
+    <p data-en="Scan to find us on Yelp and leave a review." data-es="Escanee para encontrarnos en Yelp y dejar una reseña.">Scan to find us on Yelp and leave a review.</p>
     <div class="actions">
       <button type="button" id="print-card" data-en="Print this card" data-es="Imprimir esta tarjeta">Print this card</button>
-      <a href="index.html" data-en="Back to the bay" data-es="Volver a la bahía">Back to the bay</a>
+      <a href="index.html" data-en="Back to the curb" data-es="Volver al bordillo">Back to the curb</a>
     </div>
   </article>
   <script src="script.js"></script>

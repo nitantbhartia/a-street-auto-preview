@@ -1,10 +1,10 @@
-/* "A" Street Auto — the page is the poured 1263 curb. Alfa Slab One / IBM Plex Sans / IBM Plex Mono. */
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600;700&display=swap");
+/* "A" Street Auto — the page is the poured 1263 curb. Ultra / PT Sans / PT Mono. */
+@import url("https://fonts.googleapis.com/css2?family=PT+Mono&family=PT+Sans:wght@400;700&family=Ultra&display=swap");
 
 :root {
   --asphalt: #2a2722;
   --curb: #efd445;
-  --curb-deep: #c9b132;
+  --curb-deep: #c4b02c;
   --smog: #1c6a38;
   --ase: #1a3d72;
   --ink: #1b1914;
@@ -15,10 +15,10 @@ html, body { margin: 0; }
 body {
   min-height: 100vh;
   color: var(--ink);
-  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  font-family: "PT Sans", "Segoe UI", sans-serif;
   background:
-    radial-gradient(ellipse at 50% 118%, #0008 0 90px, transparent 42%),
-    repeating-linear-gradient(90deg, #2a2722 0 36px, #25221e 36px 38px);
+    radial-gradient(ellipse at 50% 120%, #0009 0 110px, transparent 44%),
+    repeating-linear-gradient(90deg, #2a2722 0 34px, #23201c 34px 36px);
 }
 a { color: inherit; }
 a.plain { text-underline-offset: 2px; }
@@ -27,44 +27,46 @@ p { margin: 0; }
 
 .curb {
   position: relative;
-  width: min(7.1in, calc(100% - 1rem));
-  margin: 0.55rem auto 1.2rem;
-  padding: 0.7rem 0.85rem 0.55rem;
+  width: min(7in, calc(100% - 0.8rem));
+  max-height: 5in;
+  margin: 0.7rem auto 1.4rem;
+  padding: 0.55rem 0.7rem 0.4rem;
   background:
-    linear-gradient(#fff7 0, transparent 18%),
-    repeating-linear-gradient(90deg, transparent 0 11px, #00000010 11px 12px),
-    linear-gradient(180deg, #f6e56a 0%, var(--curb) 48%, #d4c046 86%, var(--curb-deep) 100%);
+    radial-gradient(circle at 12% 28%, #00000012 0 1px, transparent 2px),
+    radial-gradient(circle at 68% 72%, #fff6 0 1px, transparent 2px),
+    repeating-linear-gradient(90deg, transparent 0 13px, #0000000d 13px 14px),
+    linear-gradient(180deg, #f8e76c 0%, var(--curb) 42%, #d9c53a 82%, var(--curb-deep) 100%);
   box-shadow:
-    inset 0 10px 0 #f8e98a,
-    0 16px 0 #a89428,
-    0 22px 0 #1b1914,
-    0 28px 28px #0008;
+    inset 0 9px 0 #fbf0a0,
+    0 14px 0 #a89428,
+    0 20px 0 #16130e,
+    0 26px 26px #0007;
   overflow: hidden;
 }
-.curb::before {
+.curb::after {
   content: "";
   position: absolute;
-  inset: 0 0 auto 0;
+  left: 0; right: 0; bottom: 0;
   height: 10px;
-  background: linear-gradient(#fff8, #f8e98a);
+  background: linear-gradient(#0000, #0002);
   pointer-events: none;
 }
 
-.lang { display: flex; gap: 0.15rem; }
+.lang { display: flex; gap: 0.12rem; }
 .curb > .lang {
   position: absolute;
-  top: 0.4rem;
-  right: 0.5rem;
-  z-index: 3;
+  top: 0.32rem;
+  right: 0.4rem;
+  z-index: 4;
 }
 .lang button {
   background: transparent;
   color: var(--ink);
   border: 1px solid #1b191455;
-  padding: 0.06rem 0.3rem;
+  padding: 0.04rem 0.28rem;
   cursor: pointer;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.7rem;
+  font-family: "PT Mono", ui-monospace, monospace;
+  font-size: 0.68rem;
 }
 .lang button[aria-pressed="true"] {
   background: var(--ink);
@@ -74,173 +76,162 @@ p { margin: 0; }
 
 .ase {
   position: absolute;
-  top: 0.85rem;
-  left: 0.7rem;
-  width: 58px;
-  height: 58px;
+  top: 0.55rem;
+  left: 0.55rem;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #3c6cb0, var(--ase));
+  background: radial-gradient(circle at 35% 30%, #4a7cbc, var(--ase));
   color: #fff;
-  font-family: "Alfa Slab One", "Times New Roman", serif;
+  font-family: Ultra, "Times New Roman", serif;
   letter-spacing: 0.04em;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   display: grid;
   place-items: center;
-  box-shadow: 0 0 0 4px #c9a24a, 0 3px 0 #0005;
+  box-shadow: 0 0 0 4px #c9a24a, 0 2px 0 #0005;
+  z-index: 3;
 }
 
 .smog {
   position: absolute;
-  top: 0.7rem;
-  right: 3.1rem;
-  width: 9.4rem;
-  padding: 0.28rem 0.35rem 0.32rem;
+  top: 0.48rem;
+  right: 2.7rem;
+  width: 9.6rem;
+  padding: 0.22rem 0.3rem 0.24rem;
   border: 2px solid var(--smog);
   color: var(--smog);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.52rem;
-  line-height: 1.2;
+  font-family: "PT Mono", ui-monospace, monospace;
+  font-size: 0.48rem;
+  line-height: 1.18;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  transform: rotate(3.2deg);
-  background: #efd445cc;
-  box-shadow: 2px 2px 0 #1c6a3844;
+  transform: rotate(2.8deg);
+  background: #efd445d0;
+  z-index: 3;
 }
 .smog b {
   display: block;
-  font-family: "Alfa Slab One", serif;
-  font-size: 0.58rem;
+  font-family: Ultra, serif;
+  font-size: 0.52rem;
   font-weight: 400;
   letter-spacing: 0;
   text-transform: none;
-  margin-bottom: 0.08rem;
+  margin-bottom: 0.05rem;
 }
 .smog span { display: block; }
 
+.nameblock { margin: 0 9.2rem 0 4.1rem; }
 .kicker {
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  letter-spacing: 0.06em;
+  font-family: "PT Mono", ui-monospace, monospace;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  font-size: 0.58rem;
-  margin: 0.15rem 0 0 4.4rem;
+  font-size: 0.52rem;
 }
 h1 {
-  font-family: "Alfa Slab One", "Times New Roman", serif;
-  font-size: clamp(1.15rem, 3.4vw, 1.55rem);
-  margin: 0.08rem 0 0 4.4rem;
+  font-family: Ultra, "Times New Roman", serif;
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+  margin: 0.04rem 0 0;
   line-height: 1.02;
   font-weight: 400;
-  letter-spacing: 0.01em;
 }
 .lede {
-  margin: 0.08rem 0 0 4.4rem;
+  margin: 0.04rem 0 0;
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
 }
 .headline {
-  margin: 0.04rem 0 0 4.4rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  max-width: 22rem;
+  margin: 0.02rem 0 0;
+  font-size: 0.68rem;
+  font-weight: 400;
 }
 
 .num {
-  font-family: "Alfa Slab One", "Times New Roman", serif;
-  font-size: clamp(4.4rem, 16vw, 6.8rem);
-  line-height: 0.82;
-  letter-spacing: 0.04em;
+  font-family: Ultra, "Times New Roman", serif;
+  font-size: clamp(4.2rem, 14vw, 5.6rem);
+  line-height: 0.78;
+  letter-spacing: 0.06em;
   text-align: center;
-  margin-top: 0.2rem;
-  text-shadow: 2px 3px 0 #a8942844;
+  margin-top: 0.08rem;
+  text-shadow: 2px 3px 0 #a8942833;
 }
 .st {
-  font-family: "Alfa Slab One", serif;
-  font-size: clamp(1.15rem, 4.2vw, 1.7rem);
-  letter-spacing: 0.28em;
+  font-family: Ultra, serif;
+  font-size: clamp(0.95rem, 3.2vw, 1.28rem);
+  letter-spacing: 0.32em;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 0.02rem;
 }
-.city {
+.city, .hours {
   text-align: center;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.64rem;
-  margin-top: 0.12rem;
-}
-.hours {
-  text-align: center;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.62rem;
-  margin-top: 0.22rem;
-  letter-spacing: 0.01em;
-}
-.paint {
-  text-align: center;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-family: "PT Mono", ui-monospace, monospace;
   font-size: 0.58rem;
-  letter-spacing: 0.02em;
-  margin: 0.28rem 0.2rem 0.2rem;
-  line-height: 1.35;
+  margin-top: 0.08rem;
 }
 
-.paint-sms {
+.paint {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.18rem 0.45rem;
+  grid-template-columns: auto 1fr auto 1fr;
+  gap: 0.12rem 0.35rem;
   align-items: baseline;
-  max-width: 22rem;
-  margin: 0.28rem auto 0.1rem;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  margin: 0.28rem 0.4rem 0;
+  font-family: "PT Mono", ui-monospace, monospace;
 }
-.paint-sms label {
-  font-size: 0.62rem;
+.paint label {
+  font-size: 0.58rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
 }
-.paint-sms input {
+.paint input {
   width: 100%;
+  min-width: 0;
   background: transparent;
   border: 0;
   border-bottom: 2px solid var(--ink);
   color: var(--ink);
-  padding: 0.06rem 0;
+  padding: 0.02rem 0;
   font-size: 0.88rem;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
-.paint-sms .hint, .paint-sms button { grid-column: 1 / -1; }
-.paint-sms button {
-  margin-top: 0.12rem;
-  background: var(--ink);
-  color: var(--curb);
+.paint .hint { grid-column: 1 / -1; }
+.paint button {
+  grid-column: 1 / -1;
+  margin-top: 0.08rem;
+  justify-self: center;
+  background: transparent;
+  color: var(--ink);
   border: 0;
-  padding: 0.32rem 0.4rem;
+  padding: 0;
   cursor: pointer;
-  font-family: "Alfa Slab One", serif;
-  font-size: 0.92rem;
-  letter-spacing: 0.03em;
+  font-family: Ultra, serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
 }
-.hint { font-size: 0.62rem; margin: 0.08rem 0 0; }
+.hint { font-size: 0.58rem; margin: 0.04rem 0 0; }
 
 .call {
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  margin-top: 0.28rem;
+  margin-top: 0.18rem;
 }
 .foot {
   text-align: center;
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 0.58rem;
-  margin-top: 0.22rem;
+  font-family: "PT Mono", ui-monospace, monospace;
+  font-size: 0.54rem;
+  margin-top: 0.1rem;
 }
 
 @media (max-width: 560px) {
-  .smog { position: static; transform: none; width: auto; margin: 3.4rem 0 0.2rem; }
-  h1, .kicker, .lede, .headline { margin-left: 4.4rem; }
+  .curb { max-height: none; }
+  .smog { position: static; transform: none; width: auto; margin: 3.2rem 0.2rem 0.1rem 4.1rem; }
+  .nameblock { margin: 0 0 0 4.1rem; }
+  .paint { grid-template-columns: auto 1fr; }
 }
 
 @media print {
   body { background: #fff; }
-  .curb { box-shadow: inset 0 10px 0 #f8e98a, 0 8px 0 #a89428; margin: 0; }
+  .curb { box-shadow: inset 0 9px 0 #fbf0a0, 0 8px 0 #a89428; margin: 0; max-height: none; }
   .lang { display: none; }
 }
